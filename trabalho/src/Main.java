@@ -17,7 +17,13 @@ public class Main {
             opcaoMenu = scanner.nextInt();
             scanner.nextLine();
 
+            switch (opcaoMenu){
+                case 1:
+                    menuBonecos();
+                    break;
+                case 2:
 
+            }
 
         }while (opcaoMenu != 3);
 
@@ -40,8 +46,46 @@ public class Main {
     public void menuBonecos(){
         int opcao;
 
-        System.out.println("************ Escolher o Boneco ************");
-        System.out.println("************  ************");
+        do {
+            System.out.println("************ Escolher o Boneco ************");
+            System.out.println("1. Suporte");
+            System.out.println("2. Adc");
+            System.out.println("3. Jungle");
+            System.out.println("4. voltar");
+
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // limpar buffer
+
+            switch (opcao) {
+                case 1:
+                    newSuporte();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                    System.out.println("Voltando ao menu principal...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+
+            System.out.println();
+        } while (opcao != 4);
+    }
+
+
+    public static void newSuporte(){
+        suporte Suport = new suporte();
+
+        System.out.print("Digite o seu nome:");
+        String nome = scanner.nextLine();
+        Suport.setNome(nome);
+
+
     }
 }
 
