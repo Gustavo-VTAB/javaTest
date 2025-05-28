@@ -29,7 +29,7 @@ public class Main {
 
 
 
-        suporte Senna = new suporte();
+        Suporte Senna = new Suporte();
 
         Senna.setNome("Senna");
         Senna.setPell(true);
@@ -79,7 +79,7 @@ public class Main {
 
 
     public static void newSuporte(){
-        suporte Suport = new suporte();
+        Suporte Suport = new Suporte();
 
         System.out.print("Digite o seu nome:");
         String nome = scanner.nextLine();

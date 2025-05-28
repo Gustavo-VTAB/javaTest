@@ -1,4 +1,4 @@
-public class adcarry extends boneco{
+public class Adcarry extends Boneco {
     int critico;
 
 
