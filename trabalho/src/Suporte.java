@@ -48,7 +48,7 @@ public class Suporte extends Boneco {
         }
     }
 
-    public void visao(int qtdWard, int pink){
+    public void visao(){
         if ( qtdWard > 0){
             qtdWard--;
             System.out.println("Colocando ward... wards restantes: " + qtdWard);

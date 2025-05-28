@@ -1,9 +1,10 @@
 public class Adcarry extends Boneco {
-    int critico;
-    int gold;
-    int item;
-    int kills;
-    int dano;
+    private int critico;
+    private int gold;
+    private int item;
+    private int kills;
+    private int dano;
+    private int morte;
 
 
     public Adcarry(String nome, String raca, String roule, String arma, int nivel, int critico, int gold, int item, int kills, int dano){
@@ -20,6 +21,10 @@ public class Adcarry extends Boneco {
     @Override
     public void ataqueBasico() {
         System.out.println("toma hit dolorido");
+
+        if (critico > 2){
+            System.out.println("Toma hit critico!!!");
+        }
     }
 
     @Override
@@ -32,13 +37,17 @@ public class Adcarry extends Boneco {
         System.out.println("Me de todo o ouro!!! IMEDIATAMENTE");
     }
 
-    public void ataqueBasico(int critico) {
-       if (critico > 2){
-            System.out.println("Toma hit critico!!!");
+    public void caitin(boolean habilidade) {
+       if (habilidade){
+           System.out.println("TOMA CAITIN MENO, OLHA O SPACE DO PAI");
+           pegandoKill(false);
+       }else {
+           System.out.println("Sou prata tomei gap");
+           morte++;
        }
     }
 
-    public void pegandoKill(int kills, int gold, boolean neutralizado){
+    public void pegandoKill( boolean neutralizado){
         int qtdGold;
         String neutra;
 
@@ -56,7 +65,7 @@ public class Adcarry extends Boneco {
         System.out.println("Gold Atual: " + gold + " Kills atuais: " + kills);
     }
 
-    public void comprandoItem(int gold, int item){
+    public void comprandoItem(){
 
         if (gold < 250){
             System.out.println("Não foi possivel comprar item");
@@ -69,7 +78,43 @@ public class Adcarry extends Boneco {
 
     }
 
+    public int getDano() {
+        return dano;
+    }
 
+    public void setDano(int dano) {
+        this.dano = dano;
+    }
 
+    public int getKills() {
+        return kills;
+    }
 
+    public void setKills(int kills) {
+        this.kills = kills;
+    }
+
+    public int getItem() {
+        return item;
+    }
+
+    public void setItem(int item) {
+        this.item = item;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getCritico() {
+        return critico;
+    }
+
+    public void setCritico(int critico) {
+        this.critico = critico;
+    }
 }
