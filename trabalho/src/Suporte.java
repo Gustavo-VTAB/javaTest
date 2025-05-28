@@ -1,12 +1,18 @@
 public class Suporte extends Boneco {
     private boolean pell;
     private boolean stun;
-    private
+    private int qtdWard;
+    private int gold;
+    private int pink;
 
-    public Suporte(String nome, String raca, String roule, String arma, int nivel, boolean pell, boolean stun){
+
+    public Suporte(String nome, String raca, String roule, String arma, int nivel, boolean pell, boolean stun, int qtdWard, int gold, int pink){
         super(nome, raca, roule, arma, nivel);
         this.pell = pell;
         this.stun = stun;
+        this.qtdWard = qtdWard;
+        this.gold = gold;
+        this.pink = pink;
 
     }
 
@@ -39,6 +45,14 @@ public class Suporte extends Boneco {
             System.out.println("Parado maluko");
         }else{
             System.out.println("Corre que ta sem skill");
+        }
+    }
+
+    public void visao(int qtdWard, int pink){
+        if ( qtdWard > 0){
+            qtdWard--;
+            System.out.println("Colocando ward... wards restantes: " + qtdWard);
+
         }
     }
 

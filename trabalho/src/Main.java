@@ -79,12 +79,11 @@ public class Main {
 
 
     public static void newSuporte(){
-        Suporte Suport = new Suporte();
 
         System.out.print("Digite o seu nome:");
         String nome = scanner.nextLine();
-        Suport.setNome(nome);
 
+        Suporte Suport = new Suporte(nome,);
 
     }
 }
