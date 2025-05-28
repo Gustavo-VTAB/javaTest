@@ -37,8 +37,7 @@ public class Main {
         System.out.println(Senna.getNome());
 
         Senna.ataqueBasico();
-        Senna.ataqueBasico(true);
-        Senna.acoes(true, false);
+        Senna.acoes();
 
 
 
@@ -83,7 +82,7 @@ public class Main {
         System.out.print("Digite o seu nome:");
         String nome = scanner.nextLine();
 
-        Suporte Suport = new Suporte(nome,);
+
 
     }
 }

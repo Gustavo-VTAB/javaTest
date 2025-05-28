@@ -7,13 +7,14 @@ public class Adcarry extends Boneco {
     private int morte;
 
 
-    public Adcarry(String nome, String raca, String roule, String arma, int nivel, int critico, int gold, int item, int kills, int dano){
+    public Adcarry(String nome, String raca, String roule, String arma, int nivel, int critico, int gold, int item, int kills, int dano, int morte){
         super(nome, raca, roule, arma, nivel);
         this.critico = critico;
         this.gold = gold;
         this.item = item;
         this.kills = kills;
         this.dano = dano;
+        this.morte = morte;
 
     }
 
@@ -35,6 +36,7 @@ public class Adcarry extends Boneco {
     @Override
     public void farmarGold(){
         System.out.println("Me de todo o ouro!!! IMEDIATAMENTE");
+        gold += 100;
     }
 
     public void caitin(boolean habilidade) {
@@ -116,5 +118,13 @@ public class Adcarry extends Boneco {
 
     public void setCritico(int critico) {
         this.critico = critico;
+    }
+
+    public int getMorte() {
+        return morte;
+    }
+
+    public void setMorte(int morte) {
+        this.morte = morte;
     }
 }

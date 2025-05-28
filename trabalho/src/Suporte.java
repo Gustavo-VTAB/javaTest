@@ -19,11 +19,19 @@ public class Suporte extends Boneco {
     @Override
     public void ataqueBasico() {
         System.out.println("toma ataque fraco");
+
+        if (stun){
+            System.out.println("Fique parado no meu hit!!");
+        }
     }
 
     @Override
     public void retornarBase(){
         System.out.println("Voltando para pegar ward meno!");
+        do {
+            qtdWard++;
+        }while (qtdWard < 3);
+        comprandoPink();
     }
 
     @Override
@@ -31,13 +39,18 @@ public class Suporte extends Boneco {
         System.out.println("Não posso farmar!! Sou suporte irmao!");
     }
 
-    public void ataqueBasico(boolean stun) {
-        if (stun){
-            System.out.println("Fique parado no meu hit!!");
+    public void comprandoPink() {
+        if (gold > 75){
+            System.out.println("Comprando pink...");
+            pink++;
+            gold -= 75;
+        }else {
+            System.out.println("não da pra comprar pink tamo sem gold");
         }
+
     }
 
-    public void acoes(boolean pell, boolean stun){
+    public void acoes(){
         if (pell){
             System.out.println("Escudinhu");
 
@@ -48,11 +61,16 @@ public class Suporte extends Boneco {
         }
     }
 
-    public void visao(){
-        if ( qtdWard > 0){
+    public void visao() {
+        if (qtdWard > 0) {
             qtdWard--;
             System.out.println("Colocando ward... wards restantes: " + qtdWard);
 
+        } else if (pink > 0) {
+            pink--;
+            System.out.println("Colocando ward... wards restantes: " + pink);
+        }else {
+            System.out.println("volta base pra comprar mais");
         }
     }
 
