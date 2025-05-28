@@ -28,19 +28,6 @@ public class Main {
         }while (opcaoMenu != 3);
 
 
-
-        Suporte Senna = new Suporte();
-
-        Senna.setNome("Senna");
-        Senna.setPell(true);
-
-        System.out.println(Senna.getNome());
-
-        Senna.ataqueBasico();
-        Senna.acoes();
-
-
-
     }
     public void menuBonecos(){
         int opcao;
@@ -53,7 +40,7 @@ public class Main {
             System.out.println("4. voltar");
 
             opcao = scanner.nextInt();
-            scanner.nextLine(); // limpar buffer
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -78,12 +65,63 @@ public class Main {
 
 
     public static void newSuporte(){
+        BonecoData dados = CriarBoneco();
+        boolean pell;
+        boolean stun;
+
+        int escolha;
+        Scanner scanner = new Scanner(System.in);
+
+        do{
+            System.out.println("Voce é pell ou stun?");
+            System.out.println("1. pell ");
+            System.out.println("2. stun ");
+            escolha = scanner.nextInt();
+
+        }while(escolha != 1 && escolha != 2 );
+
+        if (escolha == 1 ){
+            pell = true;
+            stun = false;
+        }else {
+            pell = false;
+            stun = true;
+        }
+
+        Suporte suporte = new Suporte(
+                dados.nome,
+                dados.raca,
+                dados.roule,
+                dados.arma,
+                dados.nivel,
+                pell,
+                stun,
+                3,
+                500,
+                0
+        );
+    }
+
+
+    public static BonecoData  CriarBoneco(){
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o seu nome:");
         String nome = scanner.nextLine();
 
+        System.out.println("Digite a raca do seu boneco");
+        String raca = scanner.nextLine();
 
+        System.out.println("Digite sua roule: ");
+        String roule = scanner.nextLine();
 
+        System.out.println("Digite sua arma: ");
+        String arma = scanner.nextLine();
+
+        System.out.println("Digite seu nivel");
+        int nivel = scanner.nextInt();
+
+        return new BonecoData(nome, raca, roule, arma, nivel);
     }
 }
 
