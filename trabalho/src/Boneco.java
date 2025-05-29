@@ -13,6 +13,8 @@ public abstract class Boneco {
         this.roule = roule;
     }
 
+    public abstract void mostrarStatus();
+
     public abstract void ataqueBasico();
 
     public abstract void retornarBase();

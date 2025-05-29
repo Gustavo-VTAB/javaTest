@@ -37,7 +37,20 @@ public class Suporte extends Boneco {
     @Override
     public void farmarGold(){
         System.out.println("Não posso farmar!! Sou suporte irmao!");
+        gold+=100;
     }
+
+    @Override
+    public void mostrarStatus() {
+        System.out.println("----- Status do SUPORTE -----");
+        System.out.println("Nome: " + nome);
+        System.out.println("Raça: " + raca);
+        System.out.println("Roule: " + roule);
+        System.out.println("Arma: " + arma);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Estilo: " + (this.pell ? "Peel" : "Stun"));
+    }
+
 
     public void comprandoPink() {
         if (gold > 75){

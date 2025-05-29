@@ -6,7 +6,6 @@ public class Adcarry extends Boneco {
     private int dano;
     private int morte;
 
-
     public Adcarry(String nome, String raca, String roule, String arma, int nivel, int critico, int gold, int item, int kills, int dano, int morte){
         super(nome, raca, roule, arma, nivel);
         this.critico = critico;
@@ -17,7 +16,6 @@ public class Adcarry extends Boneco {
         this.morte = morte;
 
     }
-
 
     @Override
     public void ataqueBasico() {
@@ -31,6 +29,7 @@ public class Adcarry extends Boneco {
     @Override
     public void retornarBase(){
         System.out.println("Voltando para comprar item");
+        comprandoItem();
     }
 
     @Override
@@ -39,13 +38,26 @@ public class Adcarry extends Boneco {
         gold += 100;
     }
 
+    @Override
+    public void mostrarStatus() {
+        System.out.println("----- Status do ADCARRY -----");
+        System.out.println("Nome: " + nome);
+        System.out.println("Raça: " + raca);
+        System.out.println("Roule: " + roule);
+        System.out.println("Arma: " + arma);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Críticos: " + this.critico);
+    }
+
     public void caitin(boolean habilidade) {
        if (habilidade){
            System.out.println("TOMA CAITIN MENO, OLHA O SPACE DO PAI");
            pegandoKill(false);
+           dano+= 500;
        }else {
            System.out.println("Sou prata tomei gap");
            morte++;
+           dano+= 300;
        }
     }
 
@@ -58,6 +70,7 @@ public class Adcarry extends Boneco {
         if (neutralizado){
             qtdGold = 700;
             gold+= qtdGold;
+            dano+=1000;
         }else {
             qtdGold = 400;
             gold+=qtdGold;
@@ -74,11 +87,16 @@ public class Adcarry extends Boneco {
         }else {
             gold-=250;
             item+=1;
+            critico+=10;
+            dano+=100;
+
             System.out.println("Comprando item...");
             System.out.println("item comprado!! quantidade de itens: " + item + " quantidade de gold: " + gold);
         }
 
     }
+
+
 
     public int getDano() {
         return dano;

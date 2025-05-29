@@ -37,6 +37,19 @@ public class Jungle extends Boneco {
         System.out.println("Me de ouro Gromp!!!");
         campo++;
     }
+    @Override
+    public void mostrarStatus() {
+        System.out.println("----- Status do JUNGLER -----");
+        System.out.println("Nome: " + nome);
+        System.out.println("Raça: " + raca);
+        System.out.println("Roule: " + roule);
+        System.out.println("Arma: " + arma);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Campos limpos: " + this.campo);
+        System.out.println("Dragões feitos: " + this.dragao);
+        System.out.println("Barons feitos: " + this.baron);
+        System.out.println("Tem Smite? " + (this.smite ? "Sim" : "Não"));
+    }
 
     public boolean dominarTerreno(boolean team) {
         if (team) {
@@ -48,8 +61,8 @@ public class Jungle extends Boneco {
         }
     }
 
-    public void rouboDeObjetivo(){
-        if(roubarObjetivo){
+    public void rouboDeObjetivo(boolean roubar){
+        if(roubar){
             System.out.println("ROUBOOOOOOOOOOOOOOOOUUUUUUUUUUUUUUUU É INCRIVEEEEEEELLLL");
             System.out.println("CALIBRA O SMITE REVOLTAAAAAAAA!!!!!!!!!!!!!!!!");
         }else {
@@ -71,14 +84,17 @@ public class Jungle extends Boneco {
             if (escolha == 1){
                 dragao++;
                 System.out.println("Dragão pego rapaziada bora de base! Total de Drags: " + dragao);
+                smite = false;
             } else if (escolha == 2) {
                 baron++;
                 System.out.println("Barão pego guys, da b, junta top e vamo t3! Barons pegos: " + baron);
+                smite = false;
             } else {
                 System.out.println("Escolhe 1 ou 2 mnw não é tão dificil assim... Nenhum objetivo capiturado...");
             }
         }else {
             System.out.println("Sem smite espera pela volta para dominar terreno");
+            smite = true;
         }
     }
 
